@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 
 // Mongoose
-const DATABASE_URL = process.env.PORT || 'mongodb://localhost/fullstack'
+const DATABASE_URL = process.env.DATABASE_URL || 'mongodb://localhost/fullstack'
 mongoose.connect(DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
